@@ -15,7 +15,7 @@ import java.util.Map;
  * <p>
  * 部门表 Mapper 接口
  * </p>
- *
+ * 部门mapper
  * @author stylefeng
  * @since 2018-12-07
  */

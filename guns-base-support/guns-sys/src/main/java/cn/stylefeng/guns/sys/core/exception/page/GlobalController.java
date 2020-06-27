@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 全局的控制器
- *
+ * 请求的统一处理
  * @author fengshuonan
  * @date 2016年11月13日 下午11:04:45
  */

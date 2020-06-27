@@ -16,7 +16,7 @@
 package cn.stylefeng.guns.sys.modular.rest.controller;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.node.ZTreeNode;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
@@ -85,7 +85,7 @@ public class RestRoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping(value = "/add")
-    @BussinessLog(value = "添加角色", key = "name", dict = RoleDict.class)
+    @BusinessLog(value = "添加角色", key = "name", dict = RoleDict.class)
     public ResponseData add(RestRole restRole) {
         this.restRoleService.addRole(restRole);
         return SUCCESS_TIP;
@@ -98,7 +98,7 @@ public class RestRoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping(value = "/edit")
-    @BussinessLog(value = "修改角色", key = "name", dict = RoleDict.class)
+    @BusinessLog(value = "修改角色", key = "name", dict = RoleDict.class)
     public ResponseData edit(RoleDto roleDto) {
         this.restRoleService.editRole(roleDto);
         return SUCCESS_TIP;
@@ -111,7 +111,7 @@ public class RestRoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping(value = "/remove")
-    @BussinessLog(value = "删除角色", key = "roleId", dict = DeleteDict.class)
+    @BusinessLog(value = "删除角色", key = "roleId", dict = DeleteDict.class)
     public ResponseData remove(@RequestParam Long roleId) {
         this.restRoleService.delRoleById(roleId);
         return SUCCESS_TIP;
@@ -156,7 +156,7 @@ public class RestRoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping("/setAuthority")
-    @BussinessLog(value = "配置权限", key = "roleId,ids", dict = RoleDict.class)
+    @BusinessLog(value = "配置权限", key = "roleId,ids", dict = RoleDict.class)
     public ResponseData setAuthority(@RequestParam("roleId") Long roleId, @RequestParam("ids") String ids) {
         if (ToolUtil.isOneEmpty(roleId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);

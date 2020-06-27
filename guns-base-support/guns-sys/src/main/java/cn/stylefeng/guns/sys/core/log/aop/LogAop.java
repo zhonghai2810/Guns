@@ -18,7 +18,7 @@ package cn.stylefeng.guns.sys.core.log.aop;
 import cn.stylefeng.guns.base.auth.context.LoginContextHolder;
 import cn.stylefeng.guns.base.auth.model.LoginUser;
 import cn.stylefeng.guns.base.dict.AbstractDictMap;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.sys.core.log.LogManager;
 import cn.stylefeng.guns.sys.core.log.LogObjectHolder;
 import cn.stylefeng.guns.sys.core.log.factory.LogTaskFactory;
@@ -49,7 +49,7 @@ public class LogAop {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut(value = "@annotation(cn.stylefeng.guns.base.log.BussinessLog)")
+    @Pointcut(value = "@annotation(cn.stylefeng.guns.base.log.BusinessLog)")
     public void cutService() {
     }
 
@@ -92,7 +92,7 @@ public class LogAop {
         Object[] params = point.getArgs();
 
         //获取操作名称
-        BussinessLog annotation = currentMethod.getAnnotation(BussinessLog.class);
+        BusinessLog annotation = currentMethod.getAnnotation(BusinessLog.class);
         String bussinessName = annotation.value();
         String key = annotation.key();
         Class dictClass = annotation.dict();

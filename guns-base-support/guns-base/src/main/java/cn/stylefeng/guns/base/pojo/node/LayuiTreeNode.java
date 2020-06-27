@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * layui属性组件节点
- *
+ * zhong: layui节点相关
  * @author stylefeng
  * @Date 2019-8-26 14:01
  */

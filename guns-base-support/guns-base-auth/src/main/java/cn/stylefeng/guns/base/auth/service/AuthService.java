@@ -67,7 +67,7 @@ public interface AuthService {
     LoginUser user(String account);
 
     /**
-     * 获取权限列表通过角色id
+     * 通过角色id获取权限列表
      *
      * @param roleId 角色id
      */

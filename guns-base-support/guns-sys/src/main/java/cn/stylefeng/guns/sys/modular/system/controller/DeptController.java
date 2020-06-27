@@ -17,7 +17,7 @@ package cn.stylefeng.guns.sys.modular.system.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.stylefeng.guns.base.auth.annotion.Permission;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.node.LayuiTreeNode;
 import cn.stylefeng.guns.base.pojo.node.TreeviewNode;
 import cn.stylefeng.guns.base.pojo.node.ZTreeNode;
@@ -165,7 +165,7 @@ public class DeptController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 4:57 PM
      */
-    @BussinessLog(value = "添加部门", key = "simpleName", dict = DeptDict.class)
+    @BusinessLog(value = "添加部门", key = "simpleName", dict = DeptDict.class)
     @RequestMapping(value = "/add")
     @Permission
     @ResponseBody
@@ -213,7 +213,7 @@ public class DeptController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 4:57 PM
      */
-    @BussinessLog(value = "修改部门", key = "simpleName", dict = DeptDict.class)
+    @BusinessLog(value = "修改部门", key = "simpleName", dict = DeptDict.class)
     @RequestMapping(value = "/update")
     @Permission
     @ResponseBody
@@ -228,7 +228,7 @@ public class DeptController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 4:57 PM
      */
-    @BussinessLog(value = "删除部门", key = "deptId", dict = DeptDict.class)
+    @BusinessLog(value = "删除部门", key = "deptId", dict = DeptDict.class)
     @RequestMapping(value = "/delete")
     @Permission
     @ResponseBody

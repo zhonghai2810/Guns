@@ -36,6 +36,9 @@ public class LogManager {
     private LogManager() {
     }
 
+    /*
+    单例模式设计
+     */
     public static LogManager logManager = new LogManager();
 
     public static LogManager me() {

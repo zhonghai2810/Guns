@@ -116,6 +116,7 @@
         ctxPath: "${ctxPath}",
         version: '${constants.getReleaseVersion()}'
     };
+    // console.log(Feng)
 </script>
 <script type="text/javascript" src="${ctxPath}/assets/common/libs/layui/layui.js?v=${constants.getReleaseVersion()}"></script>
 <script type="text/javascript" src="${ctxPath}/assets/common/js/common.js?v=${constants.getReleaseVersion()}"></script>
@@ -133,7 +134,7 @@
             this.src = this.src + '?t=' + (new Date).getTime();
         });
 
-        var errorMsg = "${tips!}";
+        var errorMsg = "${tips!}"; // tips由handler的tips参数返回
         if (errorMsg) {
             layer.msg(errorMsg, {icon: 5, anim: 6});
         }

@@ -15,7 +15,7 @@
  */
 package cn.stylefeng.guns.sys.modular.rest.controller;
 
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
 import cn.stylefeng.guns.sys.modular.rest.service.RestLoginLogService;
@@ -72,7 +72,7 @@ public class RestLoginLogController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 5:51 PM
      */
-    @BussinessLog("清空登录日志")
+    @BusinessLog("清空登录日志")
     @RequestMapping("/delLoginLog")
     public ResponseData delLog() {
         SqlRunner.db().delete("delete from sys_login_log");

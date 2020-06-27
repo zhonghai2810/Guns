@@ -27,6 +27,9 @@ public class SystemDict extends AbstractDictMap {
     public void init() {
     }
 
+    /*
+    系统相关返回内容的再次封装。没有需要被封装的即不做处理
+     */
     @Override
     protected void initBeWrapped() {
     }

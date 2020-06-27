@@ -17,7 +17,7 @@ package cn.stylefeng.guns.sys.modular.system.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.stylefeng.guns.base.auth.annotion.Permission;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.node.ZTreeNode;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
@@ -115,7 +115,7 @@ public class MenuController extends BaseController {
      */
     @Permission(Const.ADMIN_NAME)
     @RequestMapping(value = "/edit")
-    @BussinessLog(value = "修改菜单", key = "name", dict = MenuDict.class)
+    @BusinessLog(value = "修改菜单", key = "name", dict = MenuDict.class)
     @ResponseBody
     public ResponseData edit(MenuDto menu) {
 
@@ -172,7 +172,7 @@ public class MenuController extends BaseController {
      */
     @Permission(Const.ADMIN_NAME)
     @RequestMapping(value = "/add")
-    @BussinessLog(value = "菜单新增", key = "name", dict = MenuDict.class)
+    @BusinessLog(value = "菜单新增", key = "name", dict = MenuDict.class)
     @ResponseBody
     public ResponseData add(MenuDto menu) {
         this.menuService.addMenu(menu);
@@ -187,7 +187,7 @@ public class MenuController extends BaseController {
      */
     @Permission(Const.ADMIN_NAME)
     @RequestMapping(value = "/remove")
-    @BussinessLog(value = "删除菜单", key = "menuId", dict = DeleteDict.class)
+    @BusinessLog(value = "删除菜单", key = "menuId", dict = DeleteDict.class)
     @ResponseBody
     public ResponseData remove(@RequestParam Long menuId) {
         if (ToolUtil.isEmpty(menuId)) {

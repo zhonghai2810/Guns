@@ -44,7 +44,7 @@ public abstract class AbstractDictMap {
 
     /**
      * 初始化需要被包装的字段(例如:性别为1:男,2:女,需要被包装为汉字)
-     *
+     * 在后端对字段进行包装，前端不需要再解析值对应的意思，直接展示即可。
      * @author stylefeng
      * @Date 2017/5/9 19:35
      */

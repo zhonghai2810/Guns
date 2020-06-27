@@ -14,7 +14,7 @@ import java.util.Map;
  * <p>
  * 角色表 Mapper 接口
  * </p>
- *
+ * 用户角色Mapper
  * @author stylefeng
  * @since 2018-12-07
  */

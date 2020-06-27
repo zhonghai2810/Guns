@@ -77,6 +77,9 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public String login(String username, String password) {
 
+        /*
+        通过用户名查找数据库中的账户信息，返回User对象
+         */
         User user = userMapper.getByAccount(username);
 
         // 账号不存在

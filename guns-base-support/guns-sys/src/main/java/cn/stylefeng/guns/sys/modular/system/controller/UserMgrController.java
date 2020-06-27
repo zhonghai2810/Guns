@@ -18,7 +18,7 @@ package cn.stylefeng.guns.sys.modular.system.controller;
 import cn.stylefeng.guns.base.auth.annotion.Permission;
 import cn.stylefeng.guns.base.auth.context.LoginContextHolder;
 import cn.stylefeng.guns.base.consts.ConstantsContext;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
 import cn.stylefeng.guns.sys.core.constant.Const;
@@ -196,7 +196,7 @@ public class UserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/add")
-    @BussinessLog(value = "添加管理员", key = "account", dict = UserDict.class)
+    @BusinessLog(value = "添加管理员", key = "account", dict = UserDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData add(UserDto user) {
@@ -211,7 +211,7 @@ public class UserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/edit")
-    @BussinessLog(value = "修改管理员", key = "account", dict = UserDict.class)
+    @BusinessLog(value = "修改管理员", key = "account", dict = UserDict.class)
     @ResponseBody
     public ResponseData edit(UserDto user) {
         this.userService.editUser(user);
@@ -225,7 +225,7 @@ public class UserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/delete")
-    @BussinessLog(value = "删除管理员", key = "userId", dict = UserDict.class)
+    @BusinessLog(value = "删除管理员", key = "userId", dict = UserDict.class)
     @Permission
     @ResponseBody
     public ResponseData delete(@RequestParam Long userId) {
@@ -259,7 +259,7 @@ public class UserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/reset")
-    @BussinessLog(value = "重置管理员密码", key = "userId", dict = UserDict.class)
+    @BusinessLog(value = "重置管理员密码", key = "userId", dict = UserDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData reset(@RequestParam Long userId) {
@@ -281,7 +281,7 @@ public class UserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/freeze")
-    @BussinessLog(value = "冻结用户", key = "userId", dict = UserDict.class)
+    @BusinessLog(value = "冻结用户", key = "userId", dict = UserDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData freeze(@RequestParam Long userId) {
@@ -304,7 +304,7 @@ public class UserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/unfreeze")
-    @BussinessLog(value = "解除冻结用户", key = "userId", dict = UserDict.class)
+    @BusinessLog(value = "解除冻结用户", key = "userId", dict = UserDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData unfreeze(@RequestParam Long userId) {
@@ -323,7 +323,7 @@ public class UserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/setRole")
-    @BussinessLog(value = "分配角色", key = "userId,roleIds", dict = UserDict.class)
+    @BusinessLog(value = "分配角色", key = "userId,roleIds", dict = UserDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData setRole(@RequestParam("userId") Long userId, @RequestParam("roleIds") String roleIds) {

@@ -23,6 +23,9 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
 
     private static final long serialVersionUID = -1L;
 
+    /*
+    无权限访问资源的情况处理。如果是页面get请求，则返回跳转主页面，要求登陆。如果是接口post请求，则返回json
+     */
     @Override
     public void commence(HttpServletRequest request,
                          HttpServletResponse response,
@@ -32,6 +35,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
         if ("get".equalsIgnoreCase(request.getMethod())
                 && !request.getHeader("Accept").contains("application/json")) {
 
+            // 没有权限，调用/global/sessionError的Handler（GlobalController.java）
             response.sendRedirect(request.getContextPath() + "/global/sessionError");
 
         } else {
@@ -40,6 +44,9 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
             response.setCharacterEncoding("utf-8");
             response.setContentType("application/json");
 
+            /*
+            返回NO_PERMISSION：没有权限访问资源
+             */
             ErrorResponseData errorResponseData = new ErrorResponseData(
                     AuthExceptionEnum.NO_PERMISSION.getCode(), AuthExceptionEnum.NO_PERMISSION.getMessage());
 

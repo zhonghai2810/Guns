@@ -17,7 +17,7 @@ package cn.stylefeng.guns.sys.modular.system.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.stylefeng.guns.base.auth.context.LoginContextHolder;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.sys.core.constant.dictmap.DeleteDict;
 import cn.stylefeng.guns.sys.core.constant.dictmap.NoticeMap;
@@ -115,7 +115,7 @@ public class NoticeController extends BaseController {
      */
     @RequestMapping(value = "/add")
     @ResponseBody
-    @BussinessLog(value = "新增通知", key = "title", dict = NoticeMap.class)
+    @BusinessLog(value = "新增通知", key = "title", dict = NoticeMap.class)
     public Object add(Notice notice) {
         if (ToolUtil.isOneEmpty(notice, notice.getTitle(), notice.getContent())) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
@@ -134,7 +134,7 @@ public class NoticeController extends BaseController {
      */
     @RequestMapping(value = "/delete")
     @ResponseBody
-    @BussinessLog(value = "删除通知", key = "noticeId", dict = DeleteDict.class)
+    @BusinessLog(value = "删除通知", key = "noticeId", dict = DeleteDict.class)
     public Object delete(@RequestParam Long noticeId) {
 
         //缓存通知名称
@@ -153,7 +153,7 @@ public class NoticeController extends BaseController {
      */
     @RequestMapping(value = "/update")
     @ResponseBody
-    @BussinessLog(value = "修改通知", key = "title", dict = NoticeMap.class)
+    @BusinessLog(value = "修改通知", key = "title", dict = NoticeMap.class)
     public Object update(Notice notice) {
         if (ToolUtil.isOneEmpty(notice, notice.getNoticeId(), notice.getTitle(), notice.getContent())) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);

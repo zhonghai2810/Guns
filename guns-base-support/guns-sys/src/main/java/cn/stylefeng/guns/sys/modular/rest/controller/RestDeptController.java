@@ -16,7 +16,7 @@
 package cn.stylefeng.guns.sys.modular.rest.controller;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.node.ZTreeNode;
 import cn.stylefeng.guns.sys.core.constant.dictmap.DeptDict;
 import cn.stylefeng.guns.sys.core.constant.factory.ConstantFactory;
@@ -70,7 +70,7 @@ public class RestDeptController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 4:57 PM
      */
-    @BussinessLog(value = "添加部门", key = "simpleName", dict = DeptDict.class)
+    @BusinessLog(value = "添加部门", key = "simpleName", dict = DeptDict.class)
     @RequestMapping(value = "/add")
     public ResponseData add(RestDept restDept) {
         this.restDeptService.addDept(restDept);
@@ -116,7 +116,7 @@ public class RestDeptController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 4:57 PM
      */
-    @BussinessLog(value = "修改部门", key = "simpleName", dict = DeptDict.class)
+    @BusinessLog(value = "修改部门", key = "simpleName", dict = DeptDict.class)
     @RequestMapping(value = "/update")
     public ResponseData update(RestDept restDept) {
         restDeptService.editDept(restDept);
@@ -129,7 +129,7 @@ public class RestDeptController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 4:57 PM
      */
-    @BussinessLog(value = "删除部门", key = "deptId", dict = DeptDict.class)
+    @BusinessLog(value = "删除部门", key = "deptId", dict = DeptDict.class)
     @RequestMapping(value = "/delete")
     public ResponseData delete(@RequestParam Long deptId) {
         restDeptService.deleteDept(deptId);

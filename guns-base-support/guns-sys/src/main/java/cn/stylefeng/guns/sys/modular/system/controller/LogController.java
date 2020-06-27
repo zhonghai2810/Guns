@@ -17,7 +17,7 @@ package cn.stylefeng.guns.sys.modular.system.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.stylefeng.guns.base.auth.annotion.Permission;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.sys.core.constant.Const;
 import cn.stylefeng.guns.sys.core.constant.state.BizLogType;
@@ -109,7 +109,7 @@ public class LogController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 5:34 PM
      */
-    @BussinessLog(value = "清空业务日志")
+    @BusinessLog(value = "清空业务日志")
     @RequestMapping("/delLog")
     @Permission(Const.ADMIN_NAME)
     @ResponseBody

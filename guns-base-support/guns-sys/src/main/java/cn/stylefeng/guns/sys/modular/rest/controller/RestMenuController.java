@@ -16,7 +16,7 @@
 package cn.stylefeng.guns.sys.modular.rest.controller;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.node.ZTreeNode;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
@@ -69,7 +69,7 @@ public class RestMenuController extends BaseController {
      * @Date 2018/12/23 5:53 PM
      */
     @RequestMapping(value = "/edit")
-    @BussinessLog(value = "修改菜单", key = "name", dict = MenuDict.class)
+    @BusinessLog(value = "修改菜单", key = "name", dict = MenuDict.class)
     public ResponseData edit(MenuDto menu) {
 
         //如果修改了编号，则该菜单的子菜单也要修改对应编号
@@ -123,7 +123,7 @@ public class RestMenuController extends BaseController {
      * @Date 2018/12/23 5:53 PM
      */
     @RequestMapping(value = "/add")
-    @BussinessLog(value = "菜单新增", key = "name", dict = MenuDict.class)
+    @BusinessLog(value = "菜单新增", key = "name", dict = MenuDict.class)
     public ResponseData add(MenuDto menu) {
         this.restMenuService.addMenu(menu);
         return SUCCESS_TIP;
@@ -136,7 +136,7 @@ public class RestMenuController extends BaseController {
      * @Date 2018/12/23 5:53 PM
      */
     @RequestMapping(value = "/remove")
-    @BussinessLog(value = "删除菜单", key = "menuId", dict = DeleteDict.class)
+    @BusinessLog(value = "删除菜单", key = "menuId", dict = DeleteDict.class)
     public ResponseData remove(@RequestParam Long menuId) {
         if (ToolUtil.isEmpty(menuId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);

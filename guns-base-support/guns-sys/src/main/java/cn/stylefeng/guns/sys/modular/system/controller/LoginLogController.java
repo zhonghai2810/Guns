@@ -16,7 +16,7 @@
 package cn.stylefeng.guns.sys.modular.system.controller;
 
 import cn.stylefeng.guns.base.auth.annotion.Permission;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.sys.core.constant.Const;
 import cn.stylefeng.guns.sys.modular.system.service.LoginLogService;
@@ -88,7 +88,7 @@ public class LoginLogController extends BaseController {
      * @author fengshuonan
      * @Date 2018/12/23 5:51 PM
      */
-    @BussinessLog("清空登录日志")
+    @BusinessLog("清空登录日志")
     @RequestMapping("/delLoginLog")
     @Permission(Const.ADMIN_NAME)
     @ResponseBody

@@ -76,6 +76,7 @@ public class LoginUser implements UserDetails, Serializable {
 
     /**
      * 角色名称集
+     * 当前用户所具备的所有角色
      */
     private List<String> roleNames;
 
@@ -104,6 +105,9 @@ public class LoginUser implements UserDetails, Serializable {
      */
     private String tenantDataSourceName;
 
+    /*
+    获取当前用户所有角色对应的权限
+     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         ArrayList<GrantedAuthority> grantedAuthorities = new ArrayList<>();
@@ -116,34 +120,52 @@ public class LoginUser implements UserDetails, Serializable {
         return grantedAuthorities;
     }
 
+    /*
+    获取密码
+     */
     @Override
     public String getPassword() {
         return null;
     }
 
+    /*
+    获取系统用户名（本系统中为账号）
+     */
     @Override
     public String getUsername() {
         return this.account;
     }
 
+    /*
+    获取账户是否过期
+     */
     @Override
     public boolean isAccountNonExpired() {
         //能生成loginUser就是jwt解析成功，没锁定
         return true;
     }
 
+    /*
+    账户是否被锁定（锁定的话无法有权限）
+     */
     @Override
     public boolean isAccountNonLocked() {
         //能生成loginUser就是jwt解析成功，没锁定
         return true;
     }
 
+    /*
+    账户密码是否过期
+     */
     @Override
     public boolean isCredentialsNonExpired() {
         //能生成loginUser就是jwt解析成功，没锁定
         return true;
     }
 
+    /*
+    账户是否启动
+     */
     @Override
     public boolean isEnabled() {
         //能生成loginUser就是jwt解析成功，没锁定

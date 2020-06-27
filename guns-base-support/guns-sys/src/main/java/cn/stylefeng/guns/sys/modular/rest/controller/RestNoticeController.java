@@ -16,7 +16,7 @@
 package cn.stylefeng.guns.sys.modular.rest.controller;
 
 import cn.stylefeng.guns.base.auth.context.LoginContextHolder;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.sys.core.constant.dictmap.DeleteDict;
 import cn.stylefeng.guns.sys.core.constant.dictmap.NoticeMap;
@@ -85,7 +85,7 @@ public class RestNoticeController extends BaseController {
      * @Date 2018/12/23 6:06 PM
      */
     @RequestMapping(value = "/add")
-    @BussinessLog(value = "新增通知", key = "title", dict = NoticeMap.class)
+    @BusinessLog(value = "新增通知", key = "title", dict = NoticeMap.class)
     public Object add(RestNotice restNotice) {
         if (ToolUtil.isOneEmpty(restNotice, restNotice.getTitle(), restNotice.getContent())) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
@@ -103,7 +103,7 @@ public class RestNoticeController extends BaseController {
      * @Date 2018/12/23 6:06 PM
      */
     @RequestMapping(value = "/delete")
-    @BussinessLog(value = "删除通知", key = "noticeId", dict = DeleteDict.class)
+    @BusinessLog(value = "删除通知", key = "noticeId", dict = DeleteDict.class)
     public Object delete(@RequestParam Long noticeId) {
 
         this.restNoticeService.removeById(noticeId);
@@ -118,7 +118,7 @@ public class RestNoticeController extends BaseController {
      * @Date 2018/12/23 6:06 PM
      */
     @RequestMapping(value = "/update")
-    @BussinessLog(value = "修改通知", key = "title", dict = NoticeMap.class)
+    @BusinessLog(value = "修改通知", key = "title", dict = NoticeMap.class)
     public Object update(Notice notice) {
         if (ToolUtil.isOneEmpty(notice, notice.getNoticeId(), notice.getTitle(), notice.getContent())) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);

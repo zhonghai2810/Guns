@@ -110,7 +110,7 @@ public class ConstantsContext {
     }
 
     /**
-     * 获取顶部导航条是否开启
+     * 获取顶部导航条是否开启（顶部的广告）
      */
     public static Boolean getDefaultAdvert() {
         String gunsDefaultAdvert = (String) CONSTNTS_HOLDER.get("GUNS_DEFAULT_ADVERT");

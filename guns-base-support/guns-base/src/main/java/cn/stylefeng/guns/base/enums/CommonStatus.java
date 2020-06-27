@@ -19,7 +19,7 @@ import lombok.Getter;
 
 /**
  * 公共状态
- *
+ * 启用与禁用
  * @author fengshuonan
  * @Date 2017年1月22日 下午12:14:59
  */

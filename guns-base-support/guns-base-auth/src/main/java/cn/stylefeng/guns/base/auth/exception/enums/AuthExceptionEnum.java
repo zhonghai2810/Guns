@@ -5,7 +5,7 @@ import lombok.Getter;
 
 /**
  * 认证失败的异常枚举
- *
+ * 认证错误或者没有提供认证token时返回错误的枚举
  * @author fengshuonan
  * @Date 2019/7/18 22:22
  */

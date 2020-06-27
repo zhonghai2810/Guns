@@ -29,7 +29,7 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
-public @interface BussinessLog {
+public @interface BusinessLog {
 
     /**
      * 业务的名称,例如:"修改菜单"

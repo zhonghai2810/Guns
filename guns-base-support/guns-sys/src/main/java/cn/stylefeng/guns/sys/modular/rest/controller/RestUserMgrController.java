@@ -17,7 +17,7 @@ package cn.stylefeng.guns.sys.modular.rest.controller;
 
 import cn.stylefeng.guns.base.auth.context.LoginContextHolder;
 import cn.stylefeng.guns.base.consts.ConstantsContext;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.sys.core.constant.Const;
 import cn.stylefeng.guns.sys.core.constant.dictmap.UserDict;
@@ -144,7 +144,7 @@ public class RestUserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/add")
-    @BussinessLog(value = "添加管理员", key = "account", dict = UserDict.class)
+    @BusinessLog(value = "添加管理员", key = "account", dict = UserDict.class)
     public ResponseData add(@Valid UserDto user, BindingResult result) {
         if (result.hasErrors()) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
@@ -160,7 +160,7 @@ public class RestUserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/edit")
-    @BussinessLog(value = "修改管理员", key = "account", dict = UserDict.class)
+    @BusinessLog(value = "修改管理员", key = "account", dict = UserDict.class)
     public ResponseData edit(@Valid UserDto user, BindingResult result) {
         if (result.hasErrors()) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
@@ -176,7 +176,7 @@ public class RestUserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/delete")
-    @BussinessLog(value = "删除管理员", key = "userId", dict = UserDict.class)
+    @BusinessLog(value = "删除管理员", key = "userId", dict = UserDict.class)
     public ResponseData delete(@RequestParam Long userId) {
         if (ToolUtil.isEmpty(userId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
@@ -192,7 +192,7 @@ public class RestUserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/reset")
-    @BussinessLog(value = "重置管理员密码", key = "userId", dict = UserDict.class)
+    @BusinessLog(value = "重置管理员密码", key = "userId", dict = UserDict.class)
     public ResponseData reset(@RequestParam Long userId) {
         if (ToolUtil.isEmpty(userId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
@@ -257,7 +257,7 @@ public class RestUserMgrController extends BaseController {
      * @Date 2018/12/24 22:44
      */
     @RequestMapping("/setRole")
-    @BussinessLog(value = "分配角色", key = "userId,roleIds", dict = UserDict.class)
+    @BusinessLog(value = "分配角色", key = "userId,roleIds", dict = UserDict.class)
     public ResponseData setRole(@RequestParam("userId") Long userId, @RequestParam("roleIds") String roleIds) {
         if (ToolUtil.isOneEmpty(userId, roleIds)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);

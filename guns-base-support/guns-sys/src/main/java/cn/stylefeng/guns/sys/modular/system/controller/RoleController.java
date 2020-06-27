@@ -17,7 +17,7 @@ package cn.stylefeng.guns.sys.modular.system.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.stylefeng.guns.base.auth.annotion.Permission;
-import cn.stylefeng.guns.base.log.BussinessLog;
+import cn.stylefeng.guns.base.log.BusinessLog;
 import cn.stylefeng.guns.base.pojo.node.ZTreeNode;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageFactory;
 import cn.stylefeng.guns.base.pojo.page.LayuiPageInfo;
@@ -145,7 +145,7 @@ public class RoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping(value = "/add")
-    @BussinessLog(value = "添加角色", key = "name", dict = RoleDict.class)
+    @BusinessLog(value = "添加角色", key = "name", dict = RoleDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData add(Role role) {
@@ -160,7 +160,7 @@ public class RoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping(value = "/edit")
-    @BussinessLog(value = "修改角色", key = "name", dict = RoleDict.class)
+    @BusinessLog(value = "修改角色", key = "name", dict = RoleDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData edit(RoleDto roleDto) {
@@ -175,7 +175,7 @@ public class RoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping(value = "/remove")
-    @BussinessLog(value = "删除角色", key = "roleId", dict = DeleteDict.class)
+    @BusinessLog(value = "删除角色", key = "roleId", dict = DeleteDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData remove(@RequestParam Long roleId) {
@@ -216,7 +216,7 @@ public class RoleController extends BaseController {
      * @Date 2018/12/23 6:31 PM
      */
     @RequestMapping("/setAuthority")
-    @BussinessLog(value = "配置权限", key = "roleId,ids", dict = RoleDict.class)
+    @BusinessLog(value = "配置权限", key = "roleId,ids", dict = RoleDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData setAuthority(@RequestParam("roleId") Long roleId, @RequestParam("ids") String ids) {
